@@ -1,9 +1,11 @@
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import {removeContact} from "../contexts/ContactsContext"
+import {ContactsContext} from "../contexts/ContactsContext"
 
 const Details = ({route, navigation}) =>{
+    const { updateContact } = React.useContext(ContactsContext);
+
     const {id, firstName, lastName, birthday} = route.params.data;
     const initials = firstName[0] + lastName[0];
     const getAge = (birthday) => {
@@ -45,9 +47,8 @@ const Details = ({route, navigation}) =>{
     
       const onSubmit = data => {
         // alert(JSON.stringify(data));
-        const test = {firstName: 'test', lastName: 'test', birthday: 'test'};
-        removeContact(id)
-        // updateContact(test);
+        // const test = {firstName: 'test', lastName: 'test', birthday: new Date('1/1/1993')};
+        updateContact(data);
         navigation.goBack()
       };
 
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    margin: '0px auto',
+    textAlign: 'center'
   },
   input: {
     backgroundColor: 'white',

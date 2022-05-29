@@ -46,10 +46,9 @@ export const ContactsProvider = ({ children }) => {
   };
 
   const updateContact = (contact) => {
-    alert(JSON.stringify(contact));
-    // setContacts(
-    //   contacts.map((c) => (c.id === contact.id ? { ...contact } : c))
-    // );
+    setContacts(
+      contacts.map((c) => (c.id === contact.id ? { ...contact } : c))
+    );
   };
 
   const removeContact = (id) => {
