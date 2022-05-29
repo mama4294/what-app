@@ -3,10 +3,9 @@ import { Text, View, StyleSheet, TextInput, Button, Alert } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { ContactsContext, defaultContactValues } from '../contexts/ContactsContext';
 
-
-
-export default AddContactModal = ({navigation}) => {
+const AddContactModal = ({navigation}) => {
   const { addContact } = React.useContext(ContactsContext);
+  
   const { handleSubmit, control, reset, formState: { errors } } = useForm({
     defaultValues: defaultContactValues
   });
@@ -92,3 +91,5 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
 });
+
+export default AddContactModal

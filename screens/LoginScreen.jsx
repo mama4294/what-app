@@ -1,10 +1,9 @@
 import { StyleSheet,Text, View, Button } from 'react-native';
 
 
-export default LoginScreen = ({navigation}) => {
+const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Text>LoginScreen</Text>
       <Button onPress={() => navigation.navigate('Contacts')} title="Login"/>
     </View>
   );
@@ -17,3 +16,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
   },
 });
+
+export default LoginScreen;

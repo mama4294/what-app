@@ -1,7 +1,7 @@
 import { StyleSheet, TextInput, View, TouchableOpacity, Text, Keyboard, Button } from "react-native"
 import { Fontisto, Feather } from '@expo/vector-icons';
 
-export default SearchBart = ({searchPhrase, setSearchPhrase, searchFocused, setSearchFocused}) =>{
+const SearchBar = ({searchPhrase, setSearchPhrase, searchFocused, setSearchFocused}) =>{
 
     const clearSearchPhrase = () => {
         setSearchPhrase("")
@@ -71,3 +71,4 @@ const styles = StyleSheet.create({
 
 })
 
+export default SearchBar
